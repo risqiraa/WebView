@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <div
+      class="main d-flex flex-column justify-content-center align-items-center"
+    >
+      <form action="" method="post">
+        <div class="login">
+          <h2 id="txt">Login</h2>
+          <div class="inputBox">
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Username"
+            />
+          </div>
+          <div class="inputBox">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password"
+            />
+          </div>
+          <div class="inputBox">
+            <input type="submit" name="" id="btn" value="Login" />
+          </div>
+          <div class="group">
+            <a href="#">Forget Password</a>
+            <a href="/register">Sign up</a>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="colors">
+      <span
+        class="active"
+        onclick="changeColor('#1dd1a1')"
+        style="--clr: #1dd1a1"
+      ></span>
+      <span onclick="changeColor('#e25b45')" style="--clr: #e25b45"></span>
+      <span onclick="changeColor('#ff8357')" style="--clr: #ff8357"></span>
+      <span onclick="changeColor('#fac172')" style="--clr: #fac172"></span>
+      <span onclick="changeColor('#adc865')" style="--clr: #adc865"></span>
+    </div>
+
+    <script>
+      let btn = document.getElementById("btn");
+      let txt = document.getElementById("txt");
+      function changeColor(color) {
+        document.body.style.background = color;
+        btn.style.background = color;
+        txt.style.borderColor = color;
+
+        //tandai aktif warna
+        document.querySelectorAll("span").forEach(function (item) {
+          item.classList.remove("active");
+        });
+        event.target.classList.add("active");
+      }
+    </script>
+  </body>
+</html>
